@@ -15,6 +15,7 @@ const Hero = () => {
         src={HeroBG}
         alt="Hero Background"
         fill
+        style={{ objectFit: 'cover' }}
         className="object-cover object-center z-0"
         priority
       />
@@ -44,12 +45,19 @@ const Hero = () => {
             <Image
               src={YellowShape}
               alt="Yellow Shape"
-              layout="fill"
-              objectFit="cover"
+              width={160} // Adjust width as needed
+              height={210} // Adjust height as needed
+              style={{ objectFit: 'cover' }}
             />
             {/* Boy image */}
             <div className="absolute -top-7 -left-0 w-[160px] h-[240px]">
-              <Image src={Boy} alt="Boy" layout="fill" objectFit="cover" />
+              <Image
+               src={Boy}
+                alt="Boy"
+                width={160} // Adjust width as needed
+                height={240} // Adjust height as needed
+                style={{ objectFit: 'cover' }}
+              />
             </div>
             {/* Bottom label */}
             <div className="absolute -bottom-[100] left-[-20px] top-[250px] flex bg-white px-6 py-3 rounded-full shadow-[0px_0px_11px_1px_rgba(0,_0,_0,_0.1)] text-xs text-[#2AB7CA]">
@@ -65,7 +73,7 @@ const Hero = () => {
                 height={40}
               />
             </div>
-          </div>
+      </div>
 
           {/* Column 2 - Girl */}
           <div className="relative top-[180px] md:top-[60px] left-[-10px] md:left-[-10px] w-[140px] md:w-[160px] h-[170px] md:h-[190px]">
@@ -73,15 +81,22 @@ const Hero = () => {
             <Image
               src={BlueShape}
               alt="Blue Shape"
-              layout="fill"
-              objectFit="cover"
+               width={160} // Adjust width as needed
+               height={190} // Adjust height as needed
+              style={{ objectFit: 'cover' }}
             />
             {/* Girl image */}
             <div className="absolute -top-12 -left-11 w-[210px] h-[240px]">
-              <Image src={Girl} alt="Girl" layout="fill" objectFit="cover" />
+              <Image
+                src={Girl}
+                alt="Girl"
+                width={210} // Adjust width as needed
+                height={240} // Adjust height as needed
+                style={{ objectFit: 'cover' }}
+              />
             </div>
             {/* Top label */}
-            <div className="absolute bottom-[250px] -top-[130] flex-col bg-white px-6 py-3 rounded-full shadow-[0px_0px_11px_1px_rgba(0,_0,_0,_0.1)] text-xs text-[#FF9E0E]">
+            <div className="absolute bottom-[250px] -top-[130 flex-col bg-white px-6 py-3 rounded-full shadow-[0px_0px_11px_1px_rgba(0,_0,_0,_0.1)] text-xs text-[#FF9E0E]">
               100+
               <span className="flex text-black">Public Speakers</span>
             </div>
@@ -93,3 +108,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
