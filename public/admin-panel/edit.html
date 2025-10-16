@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Edit Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Blog</h1>
+    <form id="edit-blog-form">
+      <input type="hidden" id="blog-id">
+      <input type="text" id="title" placeholder="Title" required>
+      <input type="text" id="slug" placeholder="Slug" required>
+      <textarea id="summary" placeholder="Summary" required></textarea>
+      <textarea id="content" placeholder="Content (HTML/Markdown)" required></textarea>
+      <input type="text" id="author" placeholder="Author" required>
+      <input type="text" id="imageUrl" placeholder="Image URL" required>
+      <input type="text" id="tags" placeholder="Tags (comma-separated)">
+      <select id="status">
+        <option value="draft">Draft</option>
+        <option value="published">Published</option>
+      </select>
+      <input type="text" id="seoTitle" placeholder="SEO Title">
+      <textarea id="seoDescription" placeholder="SEO Description"></textarea>
+      <input type="text" id="canonicalUrl" placeholder="Canonical URL">
+      <input type="text" id="ogImageUrl" placeholder="Open Graph Image URL">
+      <button type="submit" class="btn">Update Blog</button>
+    </form>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
