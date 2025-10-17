@@ -5,10 +5,6 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
-type Props = {
-  params: { slug: string };
-};
-
 async function getBlog(slug: string): Promise<Blog | null> {
   const q = query(collection(db, 'blogs'), where('slug', '==', slug));
   const querySnapshot = await getDocs(q);
@@ -23,8 +19,8 @@ async function getBlog(slug: string): Promise<Blog | null> {
   }
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const blog = await getBlog(params.slug);
+export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
+  const blog = await getBlog(slug);
 
   if (!blog) {
     return {
@@ -59,8 +55,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const BlogDetailPage = async ({ params }: Props) => {
-  const blog = await getBlog(params.slug);
+const BlogDetailPage = async ({ params: { slug } }: { params: { slug: string } }) => {
+  const blog = await getBlog(slug);
 
   if (!blog) {
     notFound();
